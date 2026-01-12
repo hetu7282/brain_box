@@ -1,0 +1,27 @@
+enum FormzStatus { pure, loading, success, failed }
+
+enum PieceByPieceCategory {
+  animal,
+  beach,
+  bird,
+  city,
+  culture,
+  desert,
+  fish,
+  flower,
+  food,
+  forest,
+  fruit,
+  god,
+  lake,
+  landscape,
+  mix,
+  mountain,
+  ocean,
+  palash,
+  road,
+  space,
+  sunset,
+  village,
+  waterfall,
+}
