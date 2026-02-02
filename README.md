@@ -10,8 +10,9 @@ A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
--
-- <img width="880" height="880" alt="no_internet_light" src="https://github.com/user-attachments/assets/85f56b7f-10c4-48e5-b8b6-4b6c81b084ce" />
+
+<img width="720" height="720" alt="logo" src="https://github.com/user-attachments/assets/d96731ac-d2be-4ab5-816f-a4f26f490499" />
+
 
 
 For help getting started with Flutter development, view the
