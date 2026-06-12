@@ -1,9 +1,8 @@
-# brain_box
-
 # 🧠 Brain Box
 
 <p align="center">
-  <img src="assets/images/logo.png" alt="Brain Box Logo" width="150"/>
+  <img src="<img width="720" height="720" alt="logo" src="https://github.com/user-attachments/assets/f750da51-8584-4dc8-827f-b4535c50b63c" />
+" alt="Brain Box Logo" width="150"/>
 </p>
 
 <p align="center">
