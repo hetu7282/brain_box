@@ -1,9 +1,12 @@
 # 🧠 Brain Box
-
 <p align="center">
+<img width="150" height="150" alt="logo"  src="https://github.com/user-attachments/assets/50b24409-ed06-4b91-96a7-7517f175dce4" />
+</p>
+
+<!-- <p align="center">
   <img src="<img width="720" height="720" alt="logo" src="https://github.com/user-attachments/assets/f750da51-8584-4dc8-827f-b4535c50b63c" />
 " alt="Brain Box Logo" width="150"/>
-</p>
+</p> -->
 
 <p align="center">
   A multi-game Flutter puzzle & brain-training app featuring six unique mini-games, rich theming, background music, haptic feedback, and a clean BLoC architecture.
@@ -23,6 +26,7 @@
 - [Screens & Navigation Flow](#screens--navigation-flow)
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
+- [Project Requirements & Configuration](#project-requirements--configuration)
 - [Installation & Run Instructions](#installation--run-instructions)
 - [Future Improvements](#future-improvements)
 
@@ -177,64 +181,29 @@ Splash Screen
 
 ## 🛠️ Technologies Used
 
-| Category | Package / Technology |
-|---|---|
-| **Framework** | Flutter (Dart) — portrait-only mobile app |
-| **State Management** | `flutter_bloc` / `bloc` — Cubit pattern throughout |
-| **Navigation** | `go_router` — declarative routing with named routes |
-| **Local Storage** | `hive` / `hive_flutter` — NoSQL key-value persistence |
-| **Dependency Injection** | `get_it` — service locator pattern |
-| **Audio** | `audioplayers` — background music & SFX with dual players |
-| **Responsive Layout** | `sizer` — screen-size-adaptive sizing units (`px`) |
-| **Splash Screen** | `flutter_native_splash` — native splash with lifecycle preserve |
-| **Equality** | `equatable` — value equality for BLoC states |
-| **String Utils** | `characters` — grapheme-cluster-aware string iteration (typing game) |
-| **Localisation** | `intl` / `flutter_localizations` — i18n scaffold (English baseline) |
-| **Architecture** | Clean Architecture — `data / domain / presentation` layers per feature |
+| Category | Package / Technology | Version |
+|---|---|---|
+| **Framework** | Flutter (Dart) — portrait-only mobile app | `3.35.5` |
+| **Language** | Dart | `^3.8.1` |
+| **State Management** | `flutter_bloc` / `bloc` — Cubit pattern throughout | `^8.1.6` |
+| **Navigation** | `go_router` — declarative routing with named routes | `^16.0.0` |
+| **Local Storage** | `hive` / `hive_flutter` — NoSQL key-value persistence | `^2.2.3` / `^1.1.0` |
+| **Dependency Injection** | `get_it` — service locator pattern | `^8.0.3` |
+| **Audio** | `audioplayers` — background music & SFX with dual players | `^6.5.1` |
+| **Game Engine** | `flame` + `flame_audio` — game loop & audio for Jurassic Journey | `^1.19.0` / `^2.1.0` |
+| **Responsive Layout** | `sizer` — screen-size-adaptive sizing units (`px`) | `^3.0.5` |
+| **Splash Screen** | `flutter_native_splash` — native splash with lifecycle preserve | `^2.4.7` |
+| **Networking** | `dio` — HTTP client for API calls | `^5.8.0+1` |
+| **Connectivity** | `connectivity_plus` — network status monitoring | `^6.1.4` |
+| **Device Info** | `device_info_plus` — platform device metadata | `^11.5.0` |
+| **Permissions** | `permission_handler` — runtime permission requests | `^12.0.0+1` |
+| **Image** | `cached_network_image`, `image_picker` | `^3.4.1` / `^1.1.2` |
+| **UI Extras** | `shimmer`, `toastification`, `carousel_slider`, `flutter_staggered_grid_view` | various |
+| **Equality** | `equatable` — value equality for BLoC states | `^2.0.7` |
+| **Localisation** | `flutter_localizations` / `intl_translation` — i18n scaffold | `^0.20.1` |
+| **Architecture** | Clean Architecture — `data / domain / presentation` layers per feature | — |
 
 ---
-
-## 🗂️ Project Structure
-
-```
-lib/
-├── main.dart                        # Entry point, Hive init, system UI setup
-├── locator.dart                     # GetIt dependency injection setup
-├── app/
-│   ├── app.dart                     # Root App widget, theme & audio lifecycle
-│   └── app_bloc_provider.dart       # Global BlocProvider tree
-├── generated/                       # Intl generated localisation files
-├── l10n/                            # ARB localisation strings
-└── src/
-    ├── api/                         # API client, interceptor, endpoints (scaffold)
-    ├── config/
-    │   ├── constants/               # AppString, AppColor, Assets paths
-    │   └── router/                  # GoRouter config + Routes enum
-    └── core/
-    │   ├── animations/              # 10 reusable animation widgets
-    │   ├── bloc/                    # Global cubits: AudioCubit, HapticsCubit
-    │   ├── database/                # Hive Storage singleton + StorageStrings
-    │   ├── entity/                  # Base entity classes
-    │   ├── extensions/              # ColorExtension helpers
-    │   ├── formatters/              # Input formatters
-    │   ├── model/                   # Shared base models
-    │   ├── screens/                 # Shared screen base classes
-    │   ├── services/                # AudioService, ThemeService, HapticsService,
-    │   │                            #   ConnectivityService, DeviceInfoService, etc.
-    │   ├── usecase/                 # Base UseCase abstraction
-    │   ├── utils/                   # Logging utilities
-    │   └── widgets/                 # 20+ custom reusable Flutter widgets
-    └── features/
-        ├── home/                    # Home hub screen + HomeSelectionCubit
-        ├── onboarding/              # Splash + Onboarding screens
-        ├── setting/                 # Settings, Theme, Privacy, About screens
-        ├── jurassic_journey/        # Dino runner game
-        ├── kings_gambit/            # Full chess game with AI
-        ├── piece_by_piece/          # Jigsaw puzzle game
-        ├── slide_mastermind/        # 15-tile sliding puzzle
-        ├── tic_tac_twist/           # Tic-Tac-Toe game
-        └── quick_type_quest/        # Typing speed test
-```
 
 Each feature follows **Clean Architecture** with three layers:
 
@@ -256,37 +225,80 @@ feature/
 
 ---
 
-## 🚀 Installation & Run Instructions
+## ⚙️ Project Requirements & Configuration
+
+### 🔧 SDK & Tooling Versions
+
+| Tool | Version |
+|---|---|
+| **Flutter** | `3.35.5` |
+| **Dart** | `^3.8.1` |
+| **Kotlin** | `2.1.0` |
+| **JVM target** | `VERSION_11` |
+| **Gradle** | `8.12` |
+| **Android Gradle Plugin** | `8.7.3` |
+| **Swift** | `5.0` |
+
+---
+
+### 📦 All Dependencies (`pubspec.yaml`)
+
+#### Production Dependencies
+
+| Package | Version | Purpose |
+|---|---|---|
+| `sizer` | `^3.0.5` | Responsive UI sizing |
+| `flutter_native_splash` | `^2.4.7` | Native splash screen |
+| `flutter_bloc` | `^8.1.6` | BLoC / Cubit state management |
+| `equatable` | `^2.0.7` | Value equality for states |
+| `connectivity_plus` | `^6.1.4` | Network connectivity monitoring |
+| `shimmer` | `^3.0.0` | Shimmer loading placeholders |
+| `dio` | `^5.8.0+1` | HTTP client for REST API calls |
+| `http_parser` | `^4.1.2` | HTTP content-type parsing |
+| `path_provider` | `^2.1.5` | Platform file-system paths |
+| `hive_flutter` | `^1.1.0` | Hive Flutter integration |
+| `hive` | `^2.2.3` | NoSQL local key-value storage |
+| `device_info_plus` | `^11.5.0` | Device & OS metadata |
+| `permission_handler` | `^12.0.0+1` | Runtime permission requests |
+| `cached_network_image` | `^3.4.1` | Network image caching |
+| `image_picker` | `^1.1.2` | Camera & gallery image picking |
+| `path` | `^1.9.1` | File path utilities |
+| `loading_animation_widget` | `^1.3.0` | Loading animation widgets |
+| `lazy_load_scrollview` | `^1.3.0` | Paginated lazy scroll loading |
+| `toastification` | `^3.0.3` | Toast / snackbar notifications |
+| `go_router` | `^16.0.0` | Declarative navigation routing |
+| `get_it` | `^8.0.3` | Service locator / DI container |
+| `flutter_localization` | `^0.3.3` | Localisation utilities |
+| `intl_translation` | `^0.20.1` | i18n message extraction |
+| `flutter_advanced_switch` | `^3.1.0` | Custom toggle switch widget |
+| `dropdown_button2` | `^2.3.9` | Enhanced dropdown button |
+| `audioplayers` | `^6.5.1` | Background music & sound effects |
+| `flame` | `^1.19.0` | 2D game engine (Jurassic Journey) |
+| `flame_audio` | `^2.1.0` | Audio integration for Flame |
+| `provider` | `^6.1.2` | Lightweight state / DI provider |
+| `async` | `^2.11.0` | Async utilities (`unawaited`, etc.) |
+| `flutter_masonry_view` | `^0.0.2` | Masonry/waterfall grid layout |
+| `masonry_grid` | `^1.0.0` | Masonry grid layout helper |
+| `flutter_staggered_grid_view` | `^0.7.0` | Staggered grid view |
+| `carousel_slider` | `^5.1.1` | Horizontal carousel / slider |
+| `cupertino_icons` | `^1.0.8` | iOS-style icon set |
+
+#### Dev Dependencies
+
+| Package | Version | Purpose |
+|---|---|---|
+| `flutter_test` | SDK | Widget & unit testing framework |
+| `flutter_lints` | `^5.0.0` | Recommended lint rules |
+
+---
 
 ### Prerequisites
 
-- Flutter SDK **3.x** or later ([install guide](https://docs.flutter.dev/get-started/install))
-- Dart SDK **3.x** (bundled with Flutter)
-- Android Studio / Xcode (for device/emulator)
-- A physical device or emulator (portrait orientation required)
-
-### Steps
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/your-org/brain_box.git
-cd brain_box
-
-# 2. Install dependencies
-flutter pub get
-
-# 3. Generate Hive adapters (if needed)
-flutter pub run build_runner build --delete-conflicting-outputs
-
-# 4. Run on a connected device or emulator
-flutter run
-
-# 5. Build a release APK (Android)
-flutter build apk --release
-
-# 6. Build for iOS
-flutter build ios --release
-```
+- **Flutter `3.35.5`** — use [FVM](https://fvm.app/) (`fvm install 3.35.5 && fvm use 3.35.5`) or install manually from [flutter.dev](https://docs.flutter.dev/get-started/install)
+- **Dart `^3.8.1`** (bundled with Flutter 3.35.5)
+- **Android Studio** with Android SDK (API level 35) for Android builds
+- **Xcode 15+** with CocoaPods for iOS builds (`sudo gem install cocoapods`)
+- A physical device or emulator running **Android 5.0+ (API 21+)** or **iOS 14.0+**
 
 ### Notes
 
