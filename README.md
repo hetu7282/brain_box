@@ -1,4 +1,4 @@
-# 🧠 Brain Box
+# 🧠 Brain Box App
 <p align="center">
 <img width="150" height="150" alt="logo"  src="https://github.com/user-attachments/assets/50b24409-ed06-4b91-96a7-7517f175dce4" />
 </p>
